@@ -1,10 +1,11 @@
 <script setup>
+import Home from "./pages/Home.vue";
+import MyHeader from "./layouts/MyHeader.vue";
 </script>
 
 <template>
-  <div class="container mx-auto px-4">
-    <router-view></router-view>
-  </div>
+  <MyHeader/>
+  <Home/>
 </template>
 
 <style scoped>
