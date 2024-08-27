@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div class="text-center font-source">
-    <h1>Hello World</h1>
+  <div class="container mx-auto px-4">
+    <router-view></router-view>
   </div>
 </template>
 
