@@ -1,6 +1,6 @@
 <script setup>
 
-import LeftNavItem from "../components/ui/molecules/LeftNavItem.vue";
+import LeftNavMenu from "../layouts/LeftNavMenu.vue";
 </script>
 
 <template>
@@ -12,25 +12,7 @@ import LeftNavItem from "../components/ui/molecules/LeftNavItem.vue";
     </svg>
   </button>
 
-  <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-    <div class="space-y-2 bg-sidebarDark px-3 py-4">
-      <h3 class="text-white p-2 text-sm">I M P E K A B L E</h3>
-    </div>
-    <div class="h-full overflow-y-auto bg-sidebar bg-opacity-100">
-      <ul class="space-y-2 text-sm">
-        <LeftNavItem label="Home" icon-src="/public/images/logo_left_nav/home.svg"/>
-        <LeftNavItem label="Dashboard" icon-src="/public/images/logo_left_nav/home.svg"/>
-        <LeftNavItem label="Inbox" icon-src="/public/images/logo_left_nav/inbox.svg"/>
-        <LeftNavItem label="Products" icon-src="/public/images/logo_left_nav/home.svg"/>
-        <LeftNavItem label="Invoices" icon-src="/public/images/logo_left_nav/invoices.svg"/>
-        <LeftNavItem label="Customers" icon-src="/public/images/logo_left_nav/home.svg"/>
-        <LeftNavItem label="Chat Room" icon-src="/public/images/logo_left_nav/home.svg"/>
-        <LeftNavItem label="Calendar" icon-src="/public/images/logo_left_nav/calendar.svg"/>
-        <LeftNavItem label="Help Center" icon-src="/public/images/logo_left_nav/help_center.svg"/>
-        <LeftNavItem label="Settings" icon-src="/public/images/logo_left_nav/settings.svg"/>
-      </ul>
-    </div>
-  </aside>
+  <LeftNavMenu/>
 
   <div class="p-4 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
