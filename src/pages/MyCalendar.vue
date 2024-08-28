@@ -14,6 +14,27 @@ export default {
         initialView: 'dayGridMonth',
         height: 600,
         aspectRatio: 1.35,
+        headerToolbar: {
+          start: 'today prev next',
+          center: 'title',
+          end: 'dayGridMonth dayGridWeek dayGridDay agenda'
+        },
+        customButtons: {
+          agenda: {
+            text: 'Agenda',
+            click: () => {
+              alert('Agenda button clicked!');
+            }
+          }
+        },
+        buttonText: {
+          today: 'Today',
+          prev: 'Back',
+          next:'Next',
+          dayGridMonth:'Month',
+          dayGridWeek: 'Week',
+          dayGridDay: 'Day',
+        }
       }
     }
   }
@@ -38,4 +59,5 @@ export default {
 .fc .fc-daygrid-day {
   height: 100px; /* высота ячейки */
 }
+
 </style>
