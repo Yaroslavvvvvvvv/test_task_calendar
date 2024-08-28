@@ -1,7 +1,7 @@
 <script>
-import FullCalendar from '@fullcalendar/vue3'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
+import FullCalendar from '@fullcalendar/vue3';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
 export default {
@@ -12,13 +12,13 @@ export default {
     return {
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
-        initialView: 'dayGridMonth',
+        initialView: 'dayGridMonth', // Change to 'timeGridWeek' if you want to start with week view
         height: 600,
         aspectRatio: 1.35,
         headerToolbar: {
           start: 'today,prev,next',
           center: 'title',
-          end: 'dayGridMonth,dayGridWeek,dayGridDay,agenda'
+          end: 'dayGridMonth,timeGridWeek,timeGridDay,agenda' // Include timeGridWeek and timeGridDay
         },
         customButtons: {
           agenda: {
@@ -26,15 +26,41 @@ export default {
             click: () => {
               alert('Agenda button clicked!');
             }
-          },
+          }
         },
         buttonText: {
           today: 'Today',
           prev: 'Back',
           next: 'Next',
           dayGridMonth: 'Month',
-          dayGridWeek: 'Week',
-          dayGridDay: 'Day',
+          timeGridWeek: 'Week', // Changed from 'dayGridWeek' to 'timeGridWeek'
+          timeGridDay: 'Day'     // Changed from 'dayGridDay' to 'timeGridDay'
+        },
+        views: {
+          timeGridWeek: {
+            type: 'timeGrid',
+            duration: { days: 7 },
+            slotDuration: '00:30:00', // Adjust the slot duration if needed
+            slotLabelFormat: {
+              hour: '2-digit',
+              minute: '2-digit',
+              omitZeroMinute: false,
+              hour12: false
+            },
+            nowIndicator: true // Shows the current time indicator
+          },
+          timeGridDay: {
+            type: 'timeGrid',
+            duration: { days: 1 },
+            slotDuration: '00:30:00',
+            slotLabelFormat: {
+              hour: '2-digit',
+              minute: '2-digit',
+              omitZeroMinute: false,
+              hour12: false
+            },
+            nowIndicator: true
+          }
         }
       }
     }
@@ -47,7 +73,7 @@ export default {
     <h3 class="ml-24 mt-3 text-2xl text-navHeader">Calendar</h3>
     <div class="bg-white calendar-container">
       <h4 class="text-sidebar text-lg mb-4">Calendar View</h4>
-      <FullCalendar :options="calendarOptions"/>
+      <FullCalendar :options="calendarOptions" />
     </div>
   </div>
 </template>
@@ -112,4 +138,7 @@ export default {
   color: #43425D !important;
 }
 </style>
+
+
+
 
