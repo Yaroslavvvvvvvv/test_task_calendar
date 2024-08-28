@@ -89,4 +89,9 @@ export default {
   color: #3b86ff;
   border-color: #d7dae2 !important;
 }
+
+.fc .fc-day-today {
+  background-color: #F0F0F7 !important; /* Цвет фона для сегодняшней даты */
+  border-color: #d7dae2;
+}
 </style>
