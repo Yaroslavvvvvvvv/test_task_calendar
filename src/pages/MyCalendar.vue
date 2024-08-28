@@ -70,17 +70,17 @@ export default {
   padding: 5px 15px;
 }
 .fc .fc-button:hover {
-  color: #3b86ff; /* Цвет текста при наведении */
+  color: #3b86ff;
   background-color: white !important;
   border-color: #d7dae2 !important;
 }
 .fc .fc-button:active {
-  color: #3b86ff; /* Цвет текста при нажатии */
+  color: #3b86ff;
   background-color: white;
   border-color: #d7dae2 !important;
 }
 .fc .fc-button.fc-button-active {
-  color: #3b86ff !important; /* Синий цвет текста для активных кнопок */
+  color: #3b86ff !important;
   background-color: white !important;
   border-color: #d7dae2 !important;
 }
@@ -91,7 +91,23 @@ export default {
 }
 
 .fc .fc-day-today {
-  background-color: #F0F0F7 !important; /* Цвет фона для сегодняшней даты */
+  background-color: #F0F0F7 !important;
   border-color: #d7dae2;
+}
+
+.fc-col-header {
+  background-color: #F5F6FA !important;
+  font-size: 11px !important;
+  color: #a3a6b4 !important;
+}
+
+.fc-col-header-cell {
+  text-transform: uppercase;
+  border: none !important;
+  padding: 16px 50px !important;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #43425D !important;
 }
 </style>
