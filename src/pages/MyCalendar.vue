@@ -10,14 +10,14 @@ export default {
   data() {
     return {
       calendarOptions: {
-        plugins: [ dayGridPlugin, interactionPlugin ],
+        plugins: [dayGridPlugin, interactionPlugin],
         initialView: 'dayGridMonth',
         height: 600,
         aspectRatio: 1.35,
         headerToolbar: {
-          start: 'today prev next',
+          start: 'today,prev,next',
           center: 'title',
-          end: 'dayGridMonth dayGridWeek dayGridDay agenda'
+          end: 'dayGridMonth,dayGridWeek,dayGridDay,agenda'
         },
         customButtons: {
           agenda: {
@@ -25,13 +25,13 @@ export default {
             click: () => {
               alert('Agenda button clicked!');
             }
-          }
+          },
         },
         buttonText: {
           today: 'Today',
           prev: 'Back',
-          next:'Next',
-          dayGridMonth:'Month',
+          next: 'Next',
+          dayGridMonth: 'Month',
           dayGridWeek: 'Week',
           dayGridDay: 'Day',
         }
@@ -43,21 +43,50 @@ export default {
 
 <template>
   <div class="p-4 sm:ml-64 bg-bgCalendar">
-    <h2 class="ml-24 mt-3 text-2xl text-sidebar">Calendar</h2>
+    <h3 class="ml-24 mt-3 text-2xl text-navHeader">Calendar</h3>
     <div class="bg-white calendar-container">
+      <h4 class="text-sidebar text-lg mb-4">Calendar View</h4>
       <FullCalendar :options="calendarOptions"/>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 .calendar-container {
   margin: 36px 95px 103px 95px;
   padding: 20px;
 }
 
-.fc .fc-daygrid-day {
-  height: 100px; /* высота ячейки */
+.fc .fc-toolbar-title {
+  font-size: 18px;
+  color: #4d4f5c;
+  margin: 0px;
 }
 
+.fc .fc-button {
+  background-color: white;
+  border-color: #d7dae2;
+  color: #4d4f5c;
+  padding: 5px 15px;
+}
+.fc .fc-button:hover {
+  color: #3b86ff; /* Цвет текста при наведении */
+  background-color: white !important;
+  border-color: #d7dae2 !important;
+}
+.fc .fc-button:active {
+  color: #3b86ff; /* Цвет текста при нажатии */
+  background-color: white;
+  border-color: #d7dae2 !important;
+}
+.fc .fc-button.fc-button-active {
+  color: #3b86ff !important; /* Синий цвет текста для активных кнопок */
+  background-color: white !important;
+  border-color: #d7dae2 !important;
+}
+.fc .fc-button:disabled {
+  background-color: white !important;
+  color: #3b86ff;
+  border-color: #d7dae2 !important;
+}
 </style>
