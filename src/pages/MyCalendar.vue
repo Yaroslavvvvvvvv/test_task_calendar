@@ -2,6 +2,7 @@
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import timeGridPlugin from '@fullcalendar/timegrid';
 
 export default {
   components: {
@@ -10,7 +11,7 @@ export default {
   data() {
     return {
       calendarOptions: {
-        plugins: [dayGridPlugin, interactionPlugin],
+        plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
         initialView: 'dayGridMonth',
         height: 600,
         aspectRatio: 1.35,
@@ -111,3 +112,4 @@ export default {
   color: #43425D !important;
 }
 </style>
+
