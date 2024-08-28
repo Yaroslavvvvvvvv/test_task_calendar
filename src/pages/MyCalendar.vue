@@ -12,13 +12,13 @@ export default {
     return {
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
-        initialView: 'dayGridMonth', // Change to 'timeGridWeek' if you want to start with week view
+        initialView: 'dayGridMonth',
         height: 600,
         aspectRatio: 1.35,
         headerToolbar: {
           start: 'today,prev,next',
           center: 'title',
-          end: 'dayGridMonth,timeGridWeek,timeGridDay,agenda' // Include timeGridWeek and timeGridDay
+          end: 'dayGridMonth,timeGridWeek,timeGridDay,agenda'
         },
         customButtons: {
           agenda: {
@@ -33,25 +33,25 @@ export default {
           prev: 'Back',
           next: 'Next',
           dayGridMonth: 'Month',
-          timeGridWeek: 'Week', // Changed from 'dayGridWeek' to 'timeGridWeek'
-          timeGridDay: 'Day'     // Changed from 'dayGridDay' to 'timeGridDay'
+          timeGridWeek: 'Week',
+          timeGridDay: 'Day'
         },
         views: {
           timeGridWeek: {
             type: 'timeGrid',
-            duration: { days: 7 },
-            slotDuration: '00:30:00', // Adjust the slot duration if needed
+            duration: {days: 7},
+            slotDuration: '02:00:00',
             slotLabelFormat: {
               hour: '2-digit',
               minute: '2-digit',
               omitZeroMinute: false,
-              hour12: false
+              hour12: true,
             },
-            nowIndicator: true // Shows the current time indicator
+            nowIndicator: true,
           },
           timeGridDay: {
             type: 'timeGrid',
-            duration: { days: 1 },
+            duration: {days: 1},
             slotDuration: '00:30:00',
             slotLabelFormat: {
               hour: '2-digit',
@@ -73,7 +73,7 @@ export default {
     <h3 class="ml-24 mt-3 text-2xl text-navHeader">Calendar</h3>
     <div class="bg-white calendar-container">
       <h4 class="text-sidebar text-lg mb-4">Calendar View</h4>
-      <FullCalendar :options="calendarOptions" />
+      <FullCalendar :options="calendarOptions"/>
     </div>
   </div>
 </template>
@@ -96,21 +96,25 @@ export default {
   color: #4d4f5c;
   padding: 5px 15px;
 }
+
 .fc .fc-button:hover {
   color: #3b86ff;
   background-color: white !important;
   border-color: #d7dae2 !important;
 }
+
 .fc .fc-button:active {
   color: #3b86ff;
   background-color: white;
   border-color: #d7dae2 !important;
 }
+
 .fc .fc-button.fc-button-active {
   color: #3b86ff !important;
   background-color: white !important;
   border-color: #d7dae2 !important;
 }
+
 .fc .fc-button:disabled {
   background-color: white !important;
   color: #3b86ff;
@@ -136,6 +140,56 @@ export default {
 
 .fc .fc-daygrid-day-number {
   color: #43425D !important;
+}
+
+.fc-col-header-cell {
+  padding: 10px !important;
+  text-align: center !important;
+}
+
+.fc .fc-timegrid-day-top {
+  height: 38px !important;
+}
+
+.fc-timegrid-slot {
+  height: 38px !important;
+}
+
+.fc-daygrid-day-events {
+  height: 38px !important;
+  margin: 0px !important;
+}
+
+.fc-timegrid-axis-frame {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.fc-timegrid-divider {
+  padding: 0 !important;
+  border: none !important;
+}
+
+.fc-timegrid-slot-label-cushion {
+  color: #4D4F5C !important;
+  font-size: 13px !important;
+}
+
+.fc-timegrid-axis-cushion {
+  color: #4D4F5C !important;
+  font-size: 13px !important;
+}
+
+
+.fc .fc-timegrid-now-indicator-line {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  border-style: solid;
+  border-color: #3b86ff;
+  border-width: 1px 0 0;
 }
 </style>
 
